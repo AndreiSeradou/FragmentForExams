@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Vector;
 
 public class Folder {
+    static final Folder rootFolder = new Folder();
+    
     String name;
     List<Document> documents;
     List<Folder> folders;
