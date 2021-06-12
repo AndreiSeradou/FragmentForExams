@@ -17,7 +17,8 @@ public class AuthorImpl implements Author {
     public synchronized Document createDocument(Folder folder, String header, String context) {
         Document document = null;
         try {
-            document = new Document(folder, header, context);
+            document = new Document(header, context);
+            folder.addDocument(document);
         } catch (Exception e) {
             e.printStackTrace();
         }

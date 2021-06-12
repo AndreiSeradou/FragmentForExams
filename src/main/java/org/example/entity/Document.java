@@ -11,19 +11,17 @@ public class Document {
     public Document(){
     }
 
-    public Document(Folder folder, String header) throws Exception {
-            folder.addDocument(this);
+    public Document(String header) throws Exception {
+
         this.header = header;
     }
 
-    public Document(Folder folder, String header, String context) throws Exception {
-        folder.addDocument(this);
+    public Document( String header, String context) throws Exception {
         this.header = header;
         this.context = context;
     }
 
-    public Document(Folder folder, String header, Date createDate, String author) throws Exception {
-        folder.addDocument(this);
+    public Document(String header, Date createDate, String author) throws Exception {
         this.header = header;
         this.createDate = createDate;
         this.author = author;
