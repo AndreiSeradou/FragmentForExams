@@ -1,25 +1,25 @@
 package org.example;
 
 import org.example.actor.Administrator;
-import org.example.entity.Document;
-import org.example.entity.Folder;
+import org.example.entity.Documentimpl;
+import org.example.entity.Folderimpl;
 
 public class AdministratorImpl implements Administrator {
     @Override
-    public synchronized boolean eraseDocument(Folder folder, Document document) {
-        return folder.removeDocument(document);
+    public synchronized boolean eraseDocument(Folderimpl folderimpl, Documentimpl documentimpl) {
+        return folderimpl.removeDocument(documentimpl);
     }
 
     @Override
-    public synchronized Folder createFolder(String folderName) {
-        return new Folder(folderName);
+    public synchronized Folderimpl createFolder(String folderName) {
+        return new Folderimpl(folderName);
     }
 
     @Override
-    public synchronized boolean moveTo(Folder soursFolder, Folder targetFolder, Document document) {
-        soursFolder.removeDocument(document);
+    public synchronized boolean moveTo(Folderimpl soursFolderimpl, Folderimpl targetFolderimpl, Documentimpl documentimpl) {
+        soursFolderimpl.removeDocument(documentimpl);
         try {
-            return targetFolder.addDocument(document);
+            return targetFolderimpl.addDocument(documentimpl);
         } catch (Exception e) {
             e.printStackTrace();
             return false;

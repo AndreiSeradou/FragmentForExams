@@ -1,10 +1,10 @@
 package org.example.actor;
 
-import org.example.entity.Document;
-import org.example.entity.Folder;
+import org.example.entity.Documentimpl;
+import org.example.entity.Folderimpl;
 
 public interface Author {
-    Document createDocument(Folder folder, String header, String context);
-    void updateHeader(Document document, String newHeader);
-    void updateContext(Document document, String newContext);
+    Documentimpl createDocument(Folderimpl folderimpl, String header, String context);
+    void updateHeader(Documentimpl documentimpl, String newHeader);
+    void updateContext(Documentimpl documentimpl, String newContext);
 }

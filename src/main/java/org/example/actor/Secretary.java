@@ -1,10 +1,10 @@
 package org.example.actor;
 
-import org.example.entity.Document;
-import org.example.entity.Folder;
+import org.example.entity.Documentimpl;
+import org.example.entity.Folderimpl;
 
 public interface Secretary {
-    boolean addDocumentToFolder(Folder folder, Document document);
-    Document searchDocumentByHeader(Folder folder, String documentName);
-    Document searchDocumentByAuthor(Folder folder, String authorName);
+    boolean addDocumentToFolder(Folderimpl folderimpl, Documentimpl documentimpl);
+    Documentimpl searchDocumentByHeader(Folderimpl folderimpl, String documentName);
+    Documentimpl searchDocumentByAuthor(Folderimpl folderimpl, String authorName);
 }
