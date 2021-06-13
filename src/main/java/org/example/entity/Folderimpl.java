@@ -18,11 +18,15 @@ public class Folderimpl implements Folder {
     }
 
     public boolean addDocument(Document document){
-        for (var doc : documents
-             ) {
-            if(doc.getHeader().equals(document.getHeader()))
-                 new Exception("");
-        }
+            for (var doc : documents
+            ) {
+                try {
+                if (doc.getHeader().equals(document.getHeader()))
+                        throw  new Exception("FILE ADD ERROR!!!");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+            }
 
         return documents.add(document);
     }
