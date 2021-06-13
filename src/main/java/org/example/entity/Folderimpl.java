@@ -9,26 +9,26 @@ public class Folderimpl implements Folder {
     static final Folderimpl ROOT_FOLDERIMPL = new Folderimpl();
 
     String name;
-    List<Documentimpl> documentimpls;
+    List<Document> documents;
     List<Folderimpl> folderimpls;
 
     public Folderimpl(){
-        documentimpls = new Vector<>();
+        documents = new Vector<>();
         folderimpls = new Vector<>();
     }
 
-    public boolean addDocument(Documentimpl documentimpl){
-        for (var doc : documentimpls
+    public boolean addDocument(Document document){
+        for (var doc : documents
              ) {
-            if(doc.getHeader().equals(documentimpl.getHeader()))
+            if(doc.getHeader().equals(document.getHeader()))
                  new Exception("");
         }
 
-        return documentimpls.add(documentimpl);
+        return documents.add(document);
     }
 
-    public boolean removeDocument(Documentimpl documentimpl){
-        return documentimpls.remove(documentimpl);
+    public boolean removeDocument(Document document){
+        return documents.remove(document);
     }
 
     public Folderimpl(String name) {
@@ -39,8 +39,8 @@ public class Folderimpl implements Folder {
         this.name = name;
     }
 
-    public void setDocuments(List<Documentimpl> documentimpls) {
-        this.documentimpls = documentimpls;
+    public void setDocuments(List<Document> documents) {
+        this.documents = documents;
     }
 
     public void setFolders(List<Folderimpl> folderimpls) {
@@ -51,8 +51,8 @@ public class Folderimpl implements Folder {
         return name;
     }
 
-    public List<Documentimpl> getDocuments() {
-        return documentimpls;
+    public List<Document> getDocuments() {
+        return documents;
     }
 
     public List<Folderimpl> getFolders() {

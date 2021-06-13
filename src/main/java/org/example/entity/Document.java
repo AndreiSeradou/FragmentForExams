@@ -2,12 +2,13 @@ package org.example.entity;
 
 import java.util.Date;
 
-public class Documentimpl {
+public class Document {
     String header;
     Date createDate;
     String author;
     String context;
-    public Documentimpl(String header, Date createDate, String author, String context) throws Exception {
+
+    public Document(String header, Date createDate, String author, String context) throws Exception {
         this.header = header;
         this.createDate = createDate;
         this.author = author;

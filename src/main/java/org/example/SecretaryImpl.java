@@ -1,14 +1,15 @@
 package org.example;
 
 import org.example.actor.Secretary;
-import org.example.entity.Documentimpl;
+import org.example.entity.Document;
 import org.example.entity.Folderimpl;
+import org.example.util.Folder;
 
 public class SecretaryImpl implements Secretary {
     @Override
-    public synchronized boolean addDocumentToFolder(Folderimpl folderimpl, Documentimpl documentimpl) {
+    public synchronized boolean addDocumentToFolder(Folder folder, Document document) {
         try {
-            return folderimpl.addDocument(documentimpl);
+            return folder.addDocument(document);
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -16,7 +17,7 @@ public class SecretaryImpl implements Secretary {
     }
 
     @Override
-    public synchronized Documentimpl searchDocumentByHeader(Folderimpl folderimpl, String documentName) {
+    public synchronized Document searchDocumentByHeader(Folderimpl folderimpl, String documentName) {
         for (var document : folderimpl.getDocuments()
              ) {
             if(document.getHeader().equals(documentName));
@@ -27,7 +28,7 @@ public class SecretaryImpl implements Secretary {
     }
 
     @Override
-    public synchronized Documentimpl searchDocumentByAuthor(Folderimpl folderimpl, String authorName) {
+    public synchronized Document searchDocumentByAuthor(Folderimpl folderimpl, String authorName) {
         for (var document : folderimpl.getDocuments()
         ) {
             if(document.getAuthor().equals(authorName));

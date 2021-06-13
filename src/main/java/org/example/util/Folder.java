@@ -1,8 +1,8 @@
 package org.example.util;
 
-import org.example.entity.Documentimpl;
+import org.example.entity.Document;
 
 public interface Folder {
-    boolean addDocument(Documentimpl documentimpl);
-    boolean removeDocument(Documentimpl documentimpl);
+    boolean addDocument(Document document);
+    boolean removeDocument(Document document);
 }

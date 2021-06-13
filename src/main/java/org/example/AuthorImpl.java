@@ -1,8 +1,8 @@
 package org.example;
 
 import org.example.actor.Author;
-import org.example.entity.Documentimpl;
-import org.example.entity.Folderimpl;
+import org.example.entity.Document;
+import org.example.util.Folder;
 
 import java.util.Date;
 
@@ -14,24 +14,24 @@ public class AuthorImpl implements Author {
     }
 
     @Override
-    public synchronized Documentimpl createDocument(Folderimpl folderimpl, String header, String context) {
-        Documentimpl documentimpl = null;
+    public synchronized Document createDocument(Folder folder, String header, String context) {
+        Document document = null;
         try {
-            documentimpl = new Documentimpl(header,new Date(),name, context);
-            folderimpl.addDocument(documentimpl);
+            document = new Document(header,new Date(),name, context);
+            folder.addDocument(document);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return documentimpl;
+        return document;
     }
 
     @Override
-    public synchronized void updateHeader(Documentimpl documentimpl, String newHeader) {
-        documentimpl.setHeader(newHeader);
+    public synchronized void updateHeader(Document document, String newHeader) {
+        document.setHeader(newHeader);
     }
 
     @Override
-    public synchronized void updateContext(Documentimpl documentimpl, String newContext) {
-        documentimpl.setContext(newContext);
+    public synchronized void updateContext(Document document, String newContext) {
+        document.setContext(newContext);
     }
 }
