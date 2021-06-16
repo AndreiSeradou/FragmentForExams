@@ -6,6 +6,6 @@ import org.example.util.Folder;
 
 public interface Secretary {
     boolean addDocumentToFolder(Folder folder, Document document);
-    Document searchDocumentByHeader(Folderimpl folderimpl, String documentName);
-    Document searchDocumentByAuthor(Folderimpl folderimpl, String authorName);
+    Document searchDocumentByHeader(Folder folder, String documentName);
+    Document searchDocumentByAuthor(Folder folder, String authorName);
 }

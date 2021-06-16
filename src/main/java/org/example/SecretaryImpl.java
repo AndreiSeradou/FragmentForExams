@@ -17,8 +17,8 @@ public class SecretaryImpl implements Secretary {
     }
 
     @Override
-    public synchronized Document searchDocumentByHeader(Folderimpl folderimpl, String documentName) {
-        for (var document : folderimpl.getDocuments()
+    public synchronized Document searchDocumentByHeader(Folder folder, String documentName) {
+        for (var document : folder.getDocuments()
              ) {
             if(document.getHeader().equals(documentName));
                 return document;
@@ -28,8 +28,8 @@ public class SecretaryImpl implements Secretary {
     }
 
     @Override
-    public synchronized Document searchDocumentByAuthor(Folderimpl folderimpl, String authorName) {
-        for (var document : folderimpl.getDocuments()
+    public synchronized Document searchDocumentByAuthor(Folder folder, String authorName) {
+        for (var document : folder.getDocuments()
         ) {
             if(document.getAuthor().equals(authorName));
             return document;

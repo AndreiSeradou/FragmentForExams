@@ -22,7 +22,7 @@ public class Folderimpl implements Folder {
             ) {
                 try {
                 if (doc.getHeader().equals(document.getHeader()))
-                        throw  new Exception("FILE ADD ERROR!!!");
+                        throw  new Exception("Document add error!!!");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
