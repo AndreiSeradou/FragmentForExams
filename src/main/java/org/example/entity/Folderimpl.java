@@ -1,7 +1,6 @@
 package org.example.entity;
 
 import org.example.util.Folder;
-
 import java.util.List;
 import java.util.Vector;
 
@@ -9,30 +8,30 @@ public class Folderimpl implements Folder {
     static final Folderimpl ROOT_FOLDERIMPL = new Folderimpl();
 
     String name;
-    List<Document> documents;
+    List<Documentimpl> documentimpls;
     List<Folderimpl> folderimpls;
 
     public Folderimpl(){
-        documents = new Vector<>();
+        documentimpls = new Vector<>();
         folderimpls = new Vector<>();
     }
 
-    public boolean addDocument(Document document){
-            for (var doc : documents
+    public boolean addDocument(Documentimpl documentimpl){
+            for (var doc : documentimpls
             ) {
                 try {
-                if (doc.getHeader().equals(document.getHeader()))
-                        throw  new Exception("Document add error!!!");
+                if (doc.getHeader().equals(documentimpl.getHeader()))
+                        throw  new Exception("Documentimpl add error!!!");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
             }
 
-        return documents.add(document);
+        return documentimpls.add(documentimpl);
     }
 
-    public boolean removeDocument(Document document){
-        return documents.remove(document);
+    public boolean removeDocument(Documentimpl documentimpl){
+        return documentimpls.remove(documentimpl);
     }
 
     public Folderimpl(String name) {
@@ -43,8 +42,8 @@ public class Folderimpl implements Folder {
         this.name = name;
     }
 
-    public void setDocuments(List<Document> documents) {
-        this.documents = documents;
+    public void setDocuments(List<Documentimpl> documentimpls) {
+        this.documentimpls = documentimpls;
     }
 
     public void setFolders(List<Folderimpl> folderimpls) {
@@ -55,8 +54,8 @@ public class Folderimpl implements Folder {
         return name;
     }
 
-    public List<Document> getDocuments() {
-        return documents;
+    public List<Documentimpl> getDocuments() {
+        return documentimpls;
     }
 
     public List<Folderimpl> getFolders() {

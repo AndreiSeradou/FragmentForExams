@@ -1,14 +1,14 @@
 package org.example;
 
 import org.example.actor.Administrator;
-import org.example.entity.Document;
+import org.example.entity.Documentimpl;
 import org.example.entity.Folderimpl;
 import org.example.util.Folder;
 
 public class AdministratorImpl implements Administrator {
     @Override
-    public synchronized boolean eraseDocument(Folder folder, Document document) {
-        return folder.removeDocument(document);
+    public synchronized boolean eraseDocument(Folder folder, Documentimpl documentimpl) {
+        return folder.removeDocument(documentimpl);
     }
 
     @Override
@@ -17,10 +17,10 @@ public class AdministratorImpl implements Administrator {
     }
 
     @Override
-    public synchronized boolean moveTo(Folder soursFolder, Folder targetFolder, Document document) {
-        soursFolder.removeDocument(document);
+    public synchronized boolean moveTo(Folder soursFolder, Folder targetFolder, Documentimpl documentimpl) {
+        soursFolder.removeDocument(documentimpl);
         try {
-            return targetFolder.addDocument(document);
+            return targetFolder.addDocument(documentimpl);
         } catch (Exception e) {
             e.printStackTrace();
             return false;

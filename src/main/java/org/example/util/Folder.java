@@ -1,17 +1,17 @@
 package org.example.util;
 
-import org.example.entity.Document;
+import org.example.entity.Documentimpl;
 import org.example.entity.Folderimpl;
 
 import java.util.List;
 
 public interface Folder {
-    boolean addDocument(Document document);
-    boolean removeDocument(Document document);
+    boolean addDocument(Documentimpl documentimpl);
+    boolean removeDocument(Documentimpl documentimpl);
     void setName(String name);
-    void setDocuments(List<Document> documents);
-    void setFolders(List<Folderimpl> folderimpls);
-    List<Document> getDocuments();
+    void setDocuments(List<Documentimpl> documentimpls);
+    void setFolders(List<Folderimpl> folderimpl);
+    List<Documentimpl> getDocuments();
     List<Folderimpl> getFolders();
     String getName();
    

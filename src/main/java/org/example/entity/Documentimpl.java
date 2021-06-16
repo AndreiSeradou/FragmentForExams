@@ -1,14 +1,16 @@
 package org.example.entity;
 
+import org.example.util.Document;
+
 import java.util.Date;
 
-public class Document {
+public class Documentimpl implements Document {
     String header;
     Date createDate;
     String author;
     String context;
 
-    public Document(String header, Date createDate, String author, String context) throws Exception {
+    public Documentimpl(String header, Date createDate, String author, String context) throws Exception {
         this.header = header;
         this.createDate = createDate;
         this.author = author;
